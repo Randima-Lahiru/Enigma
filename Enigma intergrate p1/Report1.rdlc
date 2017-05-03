@@ -1,0 +1,415 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Report xmlns="http://schemas.microsoft.com/sqlserver/reporting/2008/01/reportdefinition" xmlns:rd="http://schemas.microsoft.com/SQLServer/reporting/reportdesigner">
+  <Body>
+    <ReportItems>
+      <Chart Name="Chart1">
+        <ChartCategoryHierarchy>
+          <ChartMembers>
+            <ChartMember>
+              <Group Name="Chart1_CategoryGroup">
+                <GroupExpressions>
+                  <GroupExpression>=Fields!DiseaseName.Value</GroupExpression>
+                </GroupExpressions>
+              </Group>
+              <SortExpressions>
+                <SortExpression>
+                  <Value>=Fields!DiseaseName.Value</Value>
+                </SortExpression>
+              </SortExpressions>
+              <Label>=Fields!DiseaseName.Value</Label>
+            </ChartMember>
+          </ChartMembers>
+        </ChartCategoryHierarchy>
+        <ChartSeriesHierarchy>
+          <ChartMembers>
+            <ChartMember>
+              <Label>Count</Label>
+            </ChartMember>
+          </ChartMembers>
+        </ChartSeriesHierarchy>
+        <ChartData>
+          <ChartSeriesCollection>
+            <ChartSeries Name="Count">
+              <ChartDataPoints>
+                <ChartDataPoint>
+                  <ChartDataPointValues>
+                    <Y>=Sum(Fields!Count.Value)</Y>
+                  </ChartDataPointValues>
+                  <ChartDataLabel>
+                    <Style />
+                  </ChartDataLabel>
+                  <Style />
+                  <ChartMarker>
+                    <Style />
+                  </ChartMarker>
+                  <DataElementOutput>Output</DataElementOutput>
+                </ChartDataPoint>
+              </ChartDataPoints>
+              <Style />
+              <ChartEmptyPoints>
+                <Style />
+                <ChartMarker>
+                  <Style />
+                </ChartMarker>
+                <ChartDataLabel>
+                  <Style />
+                </ChartDataLabel>
+              </ChartEmptyPoints>
+              <ValueAxisName>Primary</ValueAxisName>
+              <CategoryAxisName>Primary</CategoryAxisName>
+              <ChartSmartLabel>
+                <CalloutLineColor>Black</CalloutLineColor>
+                <MinMovingDistance>0pt</MinMovingDistance>
+              </ChartSmartLabel>
+            </ChartSeries>
+          </ChartSeriesCollection>
+        </ChartData>
+        <ChartAreas>
+          <ChartArea Name="Default">
+            <ChartCategoryAxes>
+              <ChartAxis Name="Primary">
+                <Style>
+                  <FontSize>8pt</FontSize>
+                </Style>
+                <ChartAxisTitle>
+                  <Caption>Disease Name</Caption>
+                  <Style>
+                    <FontSize>8pt</FontSize>
+                  </Style>
+                </ChartAxisTitle>
+                <ChartMajorGridLines>
+                  <Enabled>False</Enabled>
+                  <Style>
+                    <Border>
+                      <Color>Gainsboro</Color>
+                    </Border>
+                  </Style>
+                </ChartMajorGridLines>
+                <ChartMinorGridLines>
+                  <Style>
+                    <Border>
+                      <Color>Gainsboro</Color>
+                      <Style>Dotted</Style>
+                    </Border>
+                  </Style>
+                </ChartMinorGridLines>
+                <ChartMinorTickMarks>
+                  <Length>0.5</Length>
+                </ChartMinorTickMarks>
+                <CrossAt>NaN</CrossAt>
+                <Minimum>NaN</Minimum>
+                <Maximum>NaN</Maximum>
+                <ChartAxisScaleBreak>
+                  <Style />
+                </ChartAxisScaleBreak>
+              </ChartAxis>
+              <ChartAxis Name="Secondary">
+                <Style>
+                  <FontSize>8pt</FontSize>
+                </Style>
+                <ChartAxisTitle>
+                  <Caption>Axis Title</Caption>
+                  <Style>
+                    <FontSize>8pt</FontSize>
+                  </Style>
+                </ChartAxisTitle>
+                <ChartMajorGridLines>
+                  <Enabled>False</Enabled>
+                  <Style>
+                    <Border>
+                      <Color>Gainsboro</Color>
+                    </Border>
+                  </Style>
+                </ChartMajorGridLines>
+                <ChartMinorGridLines>
+                  <Style>
+                    <Border>
+                      <Color>Gainsboro</Color>
+                      <Style>Dotted</Style>
+                    </Border>
+                  </Style>
+                </ChartMinorGridLines>
+                <ChartMinorTickMarks>
+                  <Length>0.5</Length>
+                </ChartMinorTickMarks>
+                <CrossAt>NaN</CrossAt>
+                <Location>Opposite</Location>
+                <Minimum>NaN</Minimum>
+                <Maximum>NaN</Maximum>
+                <ChartAxisScaleBreak>
+                  <Style />
+                </ChartAxisScaleBreak>
+              </ChartAxis>
+            </ChartCategoryAxes>
+            <ChartValueAxes>
+              <ChartAxis Name="Primary">
+                <Style>
+                  <FontSize>8pt</FontSize>
+                </Style>
+                <ChartAxisTitle>
+                  <Caption>Counter</Caption>
+                  <Style>
+                    <FontSize>8pt</FontSize>
+                  </Style>
+                </ChartAxisTitle>
+                <ChartMajorGridLines>
+                  <Style>
+                    <Border>
+                      <Color>Gainsboro</Color>
+                    </Border>
+                  </Style>
+                </ChartMajorGridLines>
+                <ChartMinorGridLines>
+                  <Style>
+                    <Border>
+                      <Color>Gainsboro</Color>
+                      <Style>Dotted</Style>
+                    </Border>
+                  </Style>
+                </ChartMinorGridLines>
+                <ChartMinorTickMarks>
+                  <Length>0.5</Length>
+                </ChartMinorTickMarks>
+                <CrossAt>NaN</CrossAt>
+                <Minimum>NaN</Minimum>
+                <Maximum>NaN</Maximum>
+                <ChartAxisScaleBreak>
+                  <Style />
+                </ChartAxisScaleBreak>
+              </ChartAxis>
+              <ChartAxis Name="Secondary">
+                <Style>
+                  <FontSize>8pt</FontSize>
+                </Style>
+                <ChartAxisTitle>
+                  <Caption>Axis Title</Caption>
+                  <Style>
+                    <FontSize>8pt</FontSize>
+                  </Style>
+                </ChartAxisTitle>
+                <ChartMajorGridLines>
+                  <Style>
+                    <Border>
+                      <Color>Gainsboro</Color>
+                    </Border>
+                  </Style>
+                </ChartMajorGridLines>
+                <ChartMinorGridLines>
+                  <Style>
+                    <Border>
+                      <Color>Gainsboro</Color>
+                      <Style>Dotted</Style>
+                    </Border>
+                  </Style>
+                </ChartMinorGridLines>
+                <ChartMinorTickMarks>
+                  <Length>0.5</Length>
+                </ChartMinorTickMarks>
+                <CrossAt>NaN</CrossAt>
+                <Location>Opposite</Location>
+                <Minimum>NaN</Minimum>
+                <Maximum>NaN</Maximum>
+                <ChartAxisScaleBreak>
+                  <Style />
+                </ChartAxisScaleBreak>
+              </ChartAxis>
+            </ChartValueAxes>
+            <Style>
+              <BackgroundGradientType>None</BackgroundGradientType>
+            </Style>
+          </ChartArea>
+        </ChartAreas>
+        <ChartLegends>
+          <ChartLegend Name="Default">
+            <Style>
+              <BackgroundGradientType>None</BackgroundGradientType>
+              <FontSize>8pt</FontSize>
+            </Style>
+            <ChartLegendTitle>
+              <Caption />
+              <Style>
+                <FontSize>8pt</FontSize>
+                <FontWeight>Bold</FontWeight>
+                <TextAlign>Center</TextAlign>
+              </Style>
+            </ChartLegendTitle>
+            <HeaderSeparatorColor>Black</HeaderSeparatorColor>
+            <ColumnSeparatorColor>Black</ColumnSeparatorColor>
+          </ChartLegend>
+        </ChartLegends>
+        <ChartTitles>
+          <ChartTitle Name="Default">
+            <Caption>Disease Counter</Caption>
+            <Style>
+              <BackgroundGradientType>None</BackgroundGradientType>
+              <FontWeight>Bold</FontWeight>
+              <TextAlign>General</TextAlign>
+              <VerticalAlign>Top</VerticalAlign>
+            </Style>
+          </ChartTitle>
+        </ChartTitles>
+        <Palette>BrightPastel</Palette>
+        <ChartBorderSkin>
+          <Style>
+            <BackgroundColor>Gray</BackgroundColor>
+            <BackgroundGradientType>None</BackgroundGradientType>
+            <Color>White</Color>
+          </Style>
+        </ChartBorderSkin>
+        <ChartNoDataMessage Name="NoDataMessage">
+          <Caption>No Data Available</Caption>
+          <Style>
+            <BackgroundGradientType>None</BackgroundGradientType>
+            <TextAlign>General</TextAlign>
+            <VerticalAlign>Top</VerticalAlign>
+          </Style>
+        </ChartNoDataMessage>
+        <DataSetName>DataSet1DC</DataSetName>
+        <Top>0.12167in</Top>
+        <Height>3.72222in</Height>
+        <Width>9.555in</Width>
+        <Style>
+          <Border>
+            <Color>LightGrey</Color>
+            <Style>Solid</Style>
+          </Border>
+          <BackgroundColor>PaleTurquoise</BackgroundColor>
+          <BackgroundGradientType>None</BackgroundGradientType>
+          <BackgroundHatchType>BackwardDiagonal</BackgroundHatchType>
+        </Style>
+      </Chart>
+    </ReportItems>
+    <Height>4.005in</Height>
+    <Style>
+      <Border>
+        <Style>Solid</Style>
+      </Border>
+      <BackgroundColor>LightSteelBlue</BackgroundColor>
+    </Style>
+  </Body>
+  <Width>9.555in</Width>
+  <Page>
+    <PageHeader>
+      <Height>1.805in</Height>
+      <PrintOnFirstPage>true</PrintOnFirstPage>
+      <PrintOnLastPage>true</PrintOnLastPage>
+      <ReportItems>
+        <Image Name="Image1">
+          <Source>Embedded</Source>
+          <Value>icon175x175</Value>
+          <Top>0.11333in</Top>
+          <Left>3.98833in</Left>
+          <Height>1.45833in</Height>
+          <Width>1.45833in</Width>
+          <Style>
+            <Border>
+              <Style>None</Style>
+            </Border>
+          </Style>
+        </Image>
+      </ReportItems>
+      <Style>
+        <Border>
+          <Style>None</Style>
+        </Border>
+        <BackgroundColor>LightBlue</BackgroundColor>
+      </Style>
+    </PageHeader>
+    <PageFooter>
+      <Height>1.23333in</Height>
+      <PrintOnFirstPage>true</PrintOnFirstPage>
+      <PrintOnLastPage>true</PrintOnLastPage>
+      <ReportItems>
+        <Textbox Name="Textbox7">
+          <CanGrow>true</CanGrow>
+          <KeepTogether>true</KeepTogether>
+          <Paragraphs>
+            <Paragraph>
+              <TextRuns>
+                <TextRun>
+                  <Value>Enigma.All Right Reserved:All Right Reserved</Value>
+                  <Style>
+                    <Format>t</Format>
+                  </Style>
+                </TextRun>
+              </TextRuns>
+              <Style />
+            </Paragraph>
+          </Paragraphs>
+          <rd:DefaultName>Textbox7</rd:DefaultName>
+          <Top>0.27in</Top>
+          <Height>0.25in</Height>
+          <Width>9.555in</Width>
+          <Style>
+            <Border>
+              <Style>None</Style>
+            </Border>
+            <PaddingLeft>2pt</PaddingLeft>
+            <PaddingRight>2pt</PaddingRight>
+            <PaddingTop>2pt</PaddingTop>
+            <PaddingBottom>2pt</PaddingBottom>
+          </Style>
+        </Textbox>
+      </ReportItems>
+      <Style>
+        <Border>
+          <Style>None</Style>
+        </Border>
+        <BackgroundColor>LightBlue</BackgroundColor>
+      </Style>
+    </PageFooter>
+    <PageHeight>8.27in</PageHeight>
+    <PageWidth>11.69in</PageWidth>
+    <LeftMargin>1in</LeftMargin>
+    <RightMargin>1in</RightMargin>
+    <TopMargin>1in</TopMargin>
+    <BottomMargin>1in</BottomMargin>
+    <Style />
+  </Page>
+  <AutoRefresh>0</AutoRefresh>
+  <DataSources>
+    <DataSource Name="DataSet1DiseaseCounter">
+      <ConnectionProperties>
+        <DataProvider>System.Data.DataSet</DataProvider>
+        <ConnectString>/* Local Connection */</ConnectString>
+      </ConnectionProperties>
+      <rd:DataSourceID>648ef104-e8cb-4e08-b29e-1c26bcf2273a</rd:DataSourceID>
+    </DataSource>
+  </DataSources>
+  <DataSets>
+    <DataSet Name="DataSet1DC">
+      <Query>
+        <DataSourceName>DataSet1DiseaseCounter</DataSourceName>
+        <CommandText>/* Local Query */</CommandText>
+      </Query>
+      <Fields>
+        <Field Name="DiseaseName">
+          <DataField>DiseaseName</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
+        <Field Name="Count">
+          <DataField>Count</DataField>
+          <rd:TypeName>System.Int32</rd:TypeName>
+        </Field>
+      </Fields>
+      <rd:DataSetInfo>
+        <rd:DataSetName>DataSet1DiseaseCounter</rd:DataSetName>
+        <rd:SchemaPath>C:\Users\Yule Paulusha\Documents\Visual Studio 2015\Projects\Enigma intergrate p1\Enigma intergrate p1\DataSet1DiseaseCounter.xsd</rd:SchemaPath>
+        <rd:TableName>Disease</rd:TableName>
+        <rd:TableAdapterFillMethod>Fill</rd:TableAdapterFillMethod>
+        <rd:TableAdapterGetDataMethod>GetData</rd:TableAdapterGetDataMethod>
+        <rd:TableAdapterName>DiseaseTableAdapter</rd:TableAdapterName>
+      </rd:DataSetInfo>
+    </DataSet>
+  </DataSets>
+  <EmbeddedImages>
+    <EmbeddedImage Name="icon175x175">
+      <MIMEType>image/png</MIMEType>
+      <ImageData>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</ImageData>
+    </EmbeddedImage>
+  </EmbeddedImages>
+  <rd:ReportUnitType>Inch</rd:ReportUnitType>
+  <rd:ReportID>004e71a9-f215-4102-b8ba-f56a776d8a2a</rd:ReportID>
+</Report>

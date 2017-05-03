@@ -1,0 +1,200 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+  <EntityContainerMapping StorageEntityContainer="EclinicModelStoreContainer" CdmEntityContainer="EclinicEntities2">
+    <EntitySetMapping Name="AdminUsers">
+      <EntityTypeMapping TypeName="EclinicModel.AdminUser">
+        <MappingFragment StoreEntitySet="AdminUser">
+          <ScalarProperty Name="AID" ColumnName="AID" />
+          <ScalarProperty Name="Username" ColumnName="Username" />
+          <ScalarProperty Name="UserType" ColumnName="UserType" />
+          <ScalarProperty Name="Password" ColumnName="Password" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Availables">
+      <EntityTypeMapping TypeName="EclinicModel.Available">
+        <MappingFragment StoreEntitySet="Available">
+          <ScalarProperty Name="ID" ColumnName="ID" />
+          <ScalarProperty Name="DoctorName" ColumnName="DoctorName" />
+          <ScalarProperty Name="Date" ColumnName="Date" />
+          <ScalarProperty Name="TimeSlot" ColumnName="TimeSlot" />
+          <ScalarProperty Name="Bit" ColumnName="Bit" />
+          <ScalarProperty Name="HospitalName" ColumnName="HospitalName" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="ChannelingDetails">
+      <EntityTypeMapping TypeName="EclinicModel.ChannelingDetail">
+        <MappingFragment StoreEntitySet="ChannelingDetails">
+          <ScalarProperty Name="ChannelingID" ColumnName="ChannelingID" />
+          <ScalarProperty Name="DoctorName" ColumnName="DoctorName" />
+          <ScalarProperty Name="HospitalName" ColumnName="HospitalName" />
+          <ScalarProperty Name="TimeSlot" ColumnName="TimeSlot" />
+          <ScalarProperty Name="PatientID" ColumnName="PatientID" />
+          <ScalarProperty Name="Date" ColumnName="Date" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Diseases">
+      <EntityTypeMapping TypeName="EclinicModel.Disease">
+        <MappingFragment StoreEntitySet="Disease">
+          <ScalarProperty Name="DiseaseID" ColumnName="DiseaseID" />
+          <ScalarProperty Name="DiseaseName" ColumnName="DiseaseName" />
+          <ScalarProperty Name="Speciality" ColumnName="Speciality" />
+          <ScalarProperty Name="Count" ColumnName="Count" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Doctors">
+      <EntityTypeMapping TypeName="EclinicModel.Doctor">
+        <MappingFragment StoreEntitySet="Doctor">
+          <ScalarProperty Name="NID" ColumnName="NID" />
+          <ScalarProperty Name="Speciality" ColumnName="Speciality" />
+          <ScalarProperty Name="Gender" ColumnName="Gender" />
+          <ScalarProperty Name="Count" ColumnName="Count" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Hospitals">
+      <EntityTypeMapping TypeName="EclinicModel.Hospital">
+        <MappingFragment StoreEntitySet="Hospital">
+          <ScalarProperty Name="ID" ColumnName="ID" />
+          <ScalarProperty Name="NID" ColumnName="NID" />
+          <ScalarProperty Name="HospitalName" ColumnName="HospitalName" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="NormalUsers">
+      <EntityTypeMapping TypeName="EclinicModel.NormalUser">
+        <MappingFragment StoreEntitySet="NormalUser">
+          <ScalarProperty Name="NID" ColumnName="NID" />
+          <ScalarProperty Name="FName" ColumnName="FName" />
+          <ScalarProperty Name="LName" ColumnName="LName" />
+          <ScalarProperty Name="Address" ColumnName="Address" />
+          <ScalarProperty Name="UserType" ColumnName="UserType" />
+          <ScalarProperty Name="UserName" ColumnName="UserName" />
+          <ScalarProperty Name="Password" ColumnName="Password" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Patients">
+      <EntityTypeMapping TypeName="EclinicModel.Patient">
+        <MappingFragment StoreEntitySet="Patient">
+          <ScalarProperty Name="NID" ColumnName="NID" />
+          <ScalarProperty Name="BloodGroup" ColumnName="BloodGroup" />
+          <ScalarProperty Name="Gender" ColumnName="Gender" />
+          <ScalarProperty Name="Age" ColumnName="Age" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Pharmacies">
+      <EntityTypeMapping TypeName="EclinicModel.Pharmacy">
+        <MappingFragment StoreEntitySet="Pharmacy">
+          <ScalarProperty Name="PID" ColumnName="PID" />
+          <ScalarProperty Name="PharmacyName" ColumnName="PharmacyName" />
+          <ScalarProperty Name="Lat" ColumnName="Lat" />
+          <ScalarProperty Name="Long" ColumnName="Long" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Symptoms">
+      <EntityTypeMapping TypeName="EclinicModel.Symptom">
+        <MappingFragment StoreEntitySet="Symptom">
+          <ScalarProperty Name="SymptomID" ColumnName="SymptomID" />
+          <ScalarProperty Name="SymptomName" ColumnName="SymptomName" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="SymptomMatchDiseases">
+      <EntityTypeMapping TypeName="EclinicModel.SymptomMatchDisease">
+        <MappingFragment StoreEntitySet="SymptomMatchDisease">
+          <ScalarProperty Name="SymptomID" ColumnName="SymptomID" />
+          <ScalarProperty Name="DiseaseID" ColumnName="DiseaseID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="SymptomMatchUniques">
+      <EntityTypeMapping TypeName="EclinicModel.SymptomMatchUnique">
+        <MappingFragment StoreEntitySet="SymptomMatchUnique">
+          <ScalarProperty Name="SymptomID" ColumnName="SymptomID" />
+          <ScalarProperty Name="Disease2ID" ColumnName="Disease2ID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="sysdiagrams">
+      <EntityTypeMapping TypeName="EclinicModel.sysdiagram">
+        <MappingFragment StoreEntitySet="sysdiagrams">
+          <ScalarProperty Name="name" ColumnName="name" />
+          <ScalarProperty Name="principal_id" ColumnName="principal_id" />
+          <ScalarProperty Name="diagram_id" ColumnName="diagram_id" />
+          <ScalarProperty Name="version" ColumnName="version" />
+          <ScalarProperty Name="definition" ColumnName="definition" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="TelNoes">
+      <EntityTypeMapping TypeName="EclinicModel.TelNo">
+        <MappingFragment StoreEntitySet="TelNo">
+          <ScalarProperty Name="TelNo1" ColumnName="TelNo" />
+          <ScalarProperty Name="NID" ColumnName="NID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Uniques">
+      <EntityTypeMapping TypeName="EclinicModel.Unique">
+        <MappingFragment StoreEntitySet="Unique">
+          <ScalarProperty Name="DiseaseID" ColumnName="DiseaseID" />
+          <ScalarProperty Name="DiseaseName" ColumnName="DiseaseName" />
+          <ScalarProperty Name="UniqueSymptom" ColumnName="UniqueSymptom" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <FunctionImportMapping FunctionImportName="Add_DeatailsOfDoctor" FunctionName="EclinicModel.Store.Add_DeatailsOfDoctor" />
+    <FunctionImportMapping FunctionImportName="Add_DetailsOfPharmacy" FunctionName="EclinicModel.Store.Add_DetailsOfPharmacy" />
+    <FunctionImportMapping FunctionImportName="Add_Hospital" FunctionName="EclinicModel.Store.Add_Hospital" />
+    <FunctionImportMapping FunctionImportName="Add_PatientDetails" FunctionName="EclinicModel.Store.Add_PatientDetails" />
+    <FunctionImportMapping FunctionImportName="Add_Pharmacy" FunctionName="EclinicModel.Store.Add_Pharmacy" />
+    <FunctionImportMapping FunctionImportName="Add_SpecialityDetails" FunctionName="EclinicModel.Store.Add_SpecialityDetails" />
+    <FunctionImportMapping FunctionImportName="Add_TelNo" FunctionName="EclinicModel.Store.Add_TelNo" />
+    <FunctionImportMapping FunctionImportName="Add_UserDetailsOfPatient" FunctionName="EclinicModel.Store.Add_UserDetailsOfPatient" />
+    <FunctionImportMapping FunctionImportName="anotherSym" FunctionName="EclinicModel.Store.anotherSym" />
+    <FunctionImportMapping FunctionImportName="correctdis" FunctionName="EclinicModel.Store.correctdis" />
+    <FunctionImportMapping FunctionImportName="Count_Tuple" FunctionName="EclinicModel.Store.Count_Tuple" />
+    <FunctionImportMapping FunctionImportName="Diseasesp1" FunctionName="EclinicModel.Store.Diseasesp1" />
+    <FunctionImportMapping FunctionImportName="Get_ID" FunctionName="EclinicModel.Store.Get_ID">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="EclinicModel.Get_ID_Result">
+          <ScalarProperty Name="ChannelingID" ColumnName="ChannelingID" />
+          <ScalarProperty Name="DoctorName" ColumnName="DoctorName" />
+          <ScalarProperty Name="HospitalName" ColumnName="HospitalName" />
+          <ScalarProperty Name="TimeSlot" ColumnName="TimeSlot" />
+          <ScalarProperty Name="Date" ColumnName="Date" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="Get_Time" FunctionName="EclinicModel.Store.Get_Time" />
+    <FunctionImportMapping FunctionImportName="Load_AdminPassword" FunctionName="EclinicModel.Store.Load_AdminPassword" />
+    <FunctionImportMapping FunctionImportName="Load_Doctor" FunctionName="EclinicModel.Store.Load_Doctor" />
+    <FunctionImportMapping FunctionImportName="Load_DoctorID" FunctionName="EclinicModel.Store.Load_DoctorID" />
+    <FunctionImportMapping FunctionImportName="Load_Hospital" FunctionName="EclinicModel.Store.Load_Hospital" />
+    <FunctionImportMapping FunctionImportName="Load_HospitalID" FunctionName="EclinicModel.Store.Load_HospitalID" />
+    <FunctionImportMapping FunctionImportName="Load_HospitalPassword" FunctionName="EclinicModel.Store.Load_HospitalPassword" />
+    <FunctionImportMapping FunctionImportName="Load_LogPatientID" FunctionName="EclinicModel.Store.Load_LogPatientID" />
+    <FunctionImportMapping FunctionImportName="Load_Password" FunctionName="EclinicModel.Store.Load_Password" />
+    <FunctionImportMapping FunctionImportName="Load_PatientID" FunctionName="EclinicModel.Store.Load_PatientID" />
+    <FunctionImportMapping FunctionImportName="Load_PharmacyID" FunctionName="EclinicModel.Store.Load_PharmacyID" />
+    <FunctionImportMapping FunctionImportName="Load_PharmacyPassword" FunctionName="EclinicModel.Store.Load_PharmacyPassword" />
+    <FunctionImportMapping FunctionImportName="Make_Appointment" FunctionName="EclinicModel.Store.Make_Appointment" />
+    <FunctionImportMapping FunctionImportName="report" FunctionName="EclinicModel.Store.report" />
+    <FunctionImportMapping FunctionImportName="report1" FunctionName="EclinicModel.Store.report1" />
+    <FunctionImportMapping FunctionImportName="sp_alterdiagram" FunctionName="EclinicModel.Store.sp_alterdiagram" />
+    <FunctionImportMapping FunctionImportName="sp_creatediagram" FunctionName="EclinicModel.Store.sp_creatediagram" />
+    <FunctionImportMapping FunctionImportName="sp_dropdiagram" FunctionName="EclinicModel.Store.sp_dropdiagram" />
+    <FunctionImportMapping FunctionImportName="sp_helpdiagramdefinition" FunctionName="EclinicModel.Store.sp_helpdiagramdefinition" />
+    <FunctionImportMapping FunctionImportName="sp_helpdiagrams" FunctionName="EclinicModel.Store.sp_helpdiagrams" />
+    <FunctionImportMapping FunctionImportName="sp_renamediagram" FunctionName="EclinicModel.Store.sp_renamediagram" />
+    <FunctionImportMapping FunctionImportName="sp_upgraddiagrams" FunctionName="EclinicModel.Store.sp_upgraddiagrams" />
+    <FunctionImportMapping FunctionImportName="Symptomsp1" FunctionName="EclinicModel.Store.Symptomsp1" />
+    <FunctionImportMapping FunctionImportName="Update_Table" FunctionName="EclinicModel.Store.Update_Table" />
+  </EntityContainerMapping>
+</Mapping>

@@ -1,0 +1,108 @@
+﻿@using Eclinic.Models;
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>e-clinic</title>
+    <link rel="shortcut icon" href="~/images/favicon.ico" type="image/x-icon" />
+    <link href="~/Content/bootstrap.min.css" rel="stylesheet" />
+    <script src="~/Scripts/jquery-3.0.0.js"></script>
+    <script src="~/Scripts/bootstrap.js"></script>
+    <link href="~/Content/font-awesome.css" rel="stylesheet" />
+    <link href="~/Content/font-awesome-animation.css" rel="stylesheet" />
+    <link href="~/Content/animate.css" rel="stylesheet" />
+
+    <script>
+        function printDiv(divName) {
+            var printContents = document.getElementById(divName).innerHTML;
+            var originalContents = document.body.innerHTML;
+
+            document.body.innerHTML = printContents;
+
+            window.print();
+
+            document.body.innerHTML = originalContents;
+        }
+    </script>
+</head>
+<body onload="getid()">
+    @{
+        var user = Session["user"] as User;
+    }
+    <div class="container">
+        <br />
+        <p style="font-style:italic; font-size:14px; color:blue;">
+            **Please take a copy of your reserved appointment report to the hospital. Clickl the print button to get the report.
+        </p>
+        <div>
+            <button class="btn btn-info" onclick="printDiv('printableArea')"><h4><i class="fa fa-print faa-tada animated" style="color:red"></i></h4> Get the printout</button>   
+        </div>
+        <br />
+        <div>            
+            <h3 style="font-style:italic">Would you like to pay online?</h3>
+            <p style="font-style:italic; font-size:14px; color:blue;">
+                **Incase you want to pay online for the appointment follow the paypal button.
+            </p>
+            <br />
+
+            <form action="https://www.sandbox.paypal.com/cgi-bin/webscr" method="post" target="_top">
+                <input type="hidden" name="cmd" value="_s-xclick">
+                <input type="hidden" name="hosted_button_id" value="5TZMF4HEMB7NL">
+                <input type="image" src="https://www.sandbox.paypal.com/en_US/i/btn/btn_paynowCC_LG.gif" border="0" name="submit" alt="PayPal - The safer, easier way to pay online!">
+                <img alt="" border="0" src="https://www.sandbox.paypal.com/en_US/i/scr/pixel.gif" width="1" height="1">
+            </form>
+
+
+            <script src="~/Scripts/PostDate.js"></script>
+            <script src="~/Scripts/MakeAppointment.js"></script>
+            <script src="~/Scripts/Update.js"></script>
+        </div>
+        <br /><br /><br /><hr />
+        @*<input type="button" onclick="printDiv('printableArea')" value="print" />*@
+        <div id="printableArea">
+            
+            <script src="https://code.jquery.com/jquery-1.11.3.min.js"></script>
+            <script src="~/Scripts/Get_ID.js"></script>
+            <input type="hidden" value="@user.ID" id="ID" />
+
+            <table>
+                <thead>
+                    <tr>
+                        <td></td>
+                        <td>
+                            <img src="~/images/icon175x175.png" />
+                        </td>
+                        <td></td>
+                    </tr>
+
+                </thead>
+                <tbody>
+                    <tr>
+                        <th>ChannelingID</th>
+                        <th>DoctorName</th>
+                        <th>HospitalName</th>
+                        <th>TimeSlot</th>
+                        <th>Date</th>
+                    </tr>
+                    <tr></tr>
+                    <tr>
+                        &copy;&nbsp;Enigma.All Right Reserved &nbsp; @DateTime.Now &nbsp;All Right Reserved
+                    </tr>
+                </tbody>
+            </table>
+            <script src="~/Scripts/Get_ID.js"></script>
+        </div><hr />
+        <a href="/PatientLogin/Logout" class="btn btn-primary">Logout</a>
+    </div>
+
+
+    
+</body>
+</html>

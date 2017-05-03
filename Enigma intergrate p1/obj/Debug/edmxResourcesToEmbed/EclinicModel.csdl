@@ -1,0 +1,309 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="EclinicModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+  <EntityType Name="AdminUser">
+    <Key>
+      <PropertyRef Name="AID" />
+    </Key>
+    <Property Name="AID" Type="String" MaxLength="10" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="Username" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+    <Property Name="UserType" Type="String" MaxLength="10" FixedLength="false" Unicode="false" />
+    <Property Name="Password" Type="String" MaxLength="10" FixedLength="false" Unicode="false" />
+  </EntityType>
+  <EntityType Name="Available">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="DoctorName" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="Date" Type="DateTime" Precision="0" />
+    <Property Name="TimeSlot" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="Bit" Type="Boolean" />
+    <Property Name="HospitalName" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+  </EntityType>
+  <EntityType Name="ChannelingDetail">
+    <Key>
+      <PropertyRef Name="ChannelingID" />
+    </Key>
+    <Property Name="ChannelingID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="DoctorName" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="HospitalName" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="TimeSlot" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="PatientID" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="Date" Type="DateTime" Precision="0" />
+  </EntityType>
+  <EntityType Name="Disease">
+    <Key>
+      <PropertyRef Name="DiseaseID" />
+    </Key>
+    <Property Name="DiseaseID" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="DiseaseName" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+    <Property Name="Speciality" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+    <Property Name="Count" Type="Int32" />
+  </EntityType>
+  <EntityType Name="Doctor">
+    <Key>
+      <PropertyRef Name="NID" />
+    </Key>
+    <Property Name="NID" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="Speciality" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+    <Property Name="Gender" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+    <Property Name="Count" Type="Int32" />
+  </EntityType>
+  <EntityType Name="Hospital">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="NID" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="HospitalName" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+  </EntityType>
+  <EntityType Name="NormalUser">
+    <Key>
+      <PropertyRef Name="NID" />
+    </Key>
+    <Property Name="NID" Type="String" MaxLength="10" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="FName" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+    <Property Name="LName" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+    <Property Name="Address" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+    <Property Name="UserType" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+    <Property Name="UserName" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+    <Property Name="Password" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+  </EntityType>
+  <EntityType Name="Patient">
+    <Key>
+      <PropertyRef Name="NID" />
+    </Key>
+    <Property Name="NID" Type="String" MaxLength="20" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="BloodGroup" Type="String" MaxLength="10" FixedLength="false" Unicode="false" />
+    <Property Name="Gender" Type="String" MaxLength="10" FixedLength="false" Unicode="false" />
+    <Property Name="Age" Type="String" MaxLength="10" FixedLength="false" Unicode="false" />
+  </EntityType>
+  <EntityType Name="Pharmacy">
+    <Key>
+      <PropertyRef Name="PID" />
+    </Key>
+    <Property Name="PID" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="PharmacyName" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="Lat" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="Long" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+  </EntityType>
+  <EntityType Name="Symptom">
+    <Key>
+      <PropertyRef Name="SymptomID" />
+    </Key>
+    <Property Name="SymptomID" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="SymptomName" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+  </EntityType>
+  <EntityType Name="SymptomMatchDisease">
+    <Key>
+      <PropertyRef Name="SymptomID" />
+      <PropertyRef Name="DiseaseID" />
+    </Key>
+    <Property Name="SymptomID" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="DiseaseID" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+  </EntityType>
+  <EntityType Name="SymptomMatchUnique">
+    <Key>
+      <PropertyRef Name="SymptomID" />
+      <PropertyRef Name="Disease2ID" />
+    </Key>
+    <Property Name="SymptomID" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="Disease2ID" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+  </EntityType>
+  <EntityType Name="sysdiagram">
+    <Key>
+      <PropertyRef Name="diagram_id" />
+    </Key>
+    <Property Name="name" Type="String" MaxLength="128" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="principal_id" Type="Int32" Nullable="false" />
+    <Property Name="diagram_id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="version" Type="Int32" />
+    <Property Name="definition" Type="Binary" MaxLength="Max" FixedLength="false" />
+  </EntityType>
+  <EntityType Name="TelNo">
+    <Key>
+      <PropertyRef Name="TelNo1" />
+    </Key>
+    <Property Name="TelNo1" Type="String" MaxLength="10" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="NID" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+  </EntityType>
+  <EntityType Name="Unique">
+    <Key>
+      <PropertyRef Name="DiseaseID" />
+    </Key>
+    <Property Name="DiseaseID" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="DiseaseName" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+    <Property Name="UniqueSymptom" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+  </EntityType>
+  <EntityContainer Name="EclinicEntities2" annotation:LazyLoadingEnabled="true">
+    <EntitySet Name="AdminUsers" EntityType="Self.AdminUser" />
+    <EntitySet Name="Availables" EntityType="Self.Available" />
+    <EntitySet Name="ChannelingDetails" EntityType="Self.ChannelingDetail" />
+    <EntitySet Name="Diseases" EntityType="Self.Disease" />
+    <EntitySet Name="Doctors" EntityType="Self.Doctor" />
+    <EntitySet Name="Hospitals" EntityType="Self.Hospital" />
+    <EntitySet Name="NormalUsers" EntityType="Self.NormalUser" />
+    <EntitySet Name="Patients" EntityType="Self.Patient" />
+    <EntitySet Name="Pharmacies" EntityType="Self.Pharmacy" />
+    <EntitySet Name="Symptoms" EntityType="Self.Symptom" />
+    <EntitySet Name="SymptomMatchDiseases" EntityType="Self.SymptomMatchDisease" />
+    <EntitySet Name="SymptomMatchUniques" EntityType="Self.SymptomMatchUnique" />
+    <EntitySet Name="sysdiagrams" EntityType="Self.sysdiagram" />
+    <EntitySet Name="TelNoes" EntityType="Self.TelNo" />
+    <EntitySet Name="Uniques" EntityType="Self.Unique" />
+    <FunctionImport Name="Add_DeatailsOfDoctor">
+      <Parameter Name="NID" Mode="In" Type="String" />
+      <Parameter Name="fname" Mode="In" Type="String" />
+      <Parameter Name="lname" Mode="In" Type="String" />
+      <Parameter Name="address" Mode="In" Type="String" />
+      <Parameter Name="username" Mode="In" Type="String" />
+      <Parameter Name="password" Mode="In" Type="String" />
+    </FunctionImport>
+    <FunctionImport Name="Add_DetailsOfPharmacy">
+      <Parameter Name="NID" Mode="In" Type="String" />
+      <Parameter Name="fname" Mode="In" Type="String" />
+      <Parameter Name="lname" Mode="In" Type="String" />
+      <Parameter Name="address" Mode="In" Type="String" />
+      <Parameter Name="username" Mode="In" Type="String" />
+      <Parameter Name="password" Mode="In" Type="String" />
+    </FunctionImport>
+    <FunctionImport Name="Add_Hospital">
+      <Parameter Name="HID" Mode="In" Type="String" />
+      <Parameter Name="name" Mode="In" Type="String" />
+      <Parameter Name="password" Mode="In" Type="String" />
+    </FunctionImport>
+    <FunctionImport Name="Add_PatientDetails">
+      <Parameter Name="NID" Mode="In" Type="String" />
+      <Parameter Name="bloodGroup" Mode="In" Type="String" />
+      <Parameter Name="gender" Mode="In" Type="String" />
+      <Parameter Name="age" Mode="In" Type="String" />
+    </FunctionImport>
+    <FunctionImport Name="Add_Pharmacy">
+      <Parameter Name="PID" Mode="In" Type="String" />
+      <Parameter Name="Name" Mode="In" Type="String" />
+      <Parameter Name="Lat" Mode="In" Type="String" />
+      <Parameter Name="Long" Mode="In" Type="String" />
+    </FunctionImport>
+    <FunctionImport Name="Add_SpecialityDetails">
+      <Parameter Name="NID" Mode="In" Type="String" />
+      <Parameter Name="speciality" Mode="In" Type="String" />
+      <Parameter Name="gender" Mode="In" Type="String" />
+    </FunctionImport>
+    <FunctionImport Name="Add_TelNo">
+      <Parameter Name="NID" Mode="In" Type="String" />
+      <Parameter Name="TelNo" Mode="In" Type="String" />
+    </FunctionImport>
+    <FunctionImport Name="Add_UserDetailsOfPatient">
+      <Parameter Name="NID" Mode="In" Type="String" />
+      <Parameter Name="fname" Mode="In" Type="String" />
+      <Parameter Name="lname" Mode="In" Type="String" />
+      <Parameter Name="address" Mode="In" Type="String" />
+      <Parameter Name="username" Mode="In" Type="String" />
+      <Parameter Name="password" Mode="In" Type="String" />
+    </FunctionImport>
+    <FunctionImport Name="anotherSym" ReturnType="Collection(String)">
+      <Parameter Name="x1" Mode="In" Type="String" />
+      <Parameter Name="x2" Mode="In" Type="String" />
+    </FunctionImport>
+    <FunctionImport Name="correctdis" ReturnType="Collection(String)">
+      <Parameter Name="iddis" Mode="In" Type="String" />
+    </FunctionImport>
+    <FunctionImport Name="Count_Tuple" ReturnType="Collection(Int32)" />
+    <FunctionImport Name="Diseasesp1" ReturnType="Collection(String)">
+      <Parameter Name="id1" Mode="In" Type="Int32" />
+      <Parameter Name="id2" Mode="In" Type="Int32" />
+      <Parameter Name="id3" Mode="In" Type="Int32" />
+      <Parameter Name="id4" Mode="In" Type="Int32" />
+    </FunctionImport>
+    <FunctionImport Name="Get_ID" ReturnType="Collection(EclinicModel.Get_ID_Result)">
+      <Parameter Name="pid" Mode="In" Type="String" />
+    </FunctionImport>
+    <FunctionImport Name="Get_Time" ReturnType="Collection(String)">
+      <Parameter Name="date" Mode="In" Type="DateTime" />
+      <Parameter Name="doctor" Mode="In" Type="String" />
+      <Parameter Name="hospital" Mode="In" Type="String" />
+    </FunctionImport>
+    <FunctionImport Name="Load_AdminPassword" ReturnType="Collection(String)">
+      <Parameter Name="username" Mode="In" Type="String" />
+    </FunctionImport>
+    <FunctionImport Name="Load_Doctor" ReturnType="Collection(String)">
+      <Parameter Name="i" Mode="In" Type="String" />
+    </FunctionImport>
+    <FunctionImport Name="Load_DoctorID" ReturnType="Collection(String)" />
+    <FunctionImport Name="Load_Hospital" ReturnType="Collection(String)">
+      <Parameter Name="DID" Mode="In" Type="String" />
+    </FunctionImport>
+    <FunctionImport Name="Load_HospitalID" ReturnType="Collection(String)" />
+    <FunctionImport Name="Load_HospitalPassword" ReturnType="Collection(String)">
+      <Parameter Name="username" Mode="In" Type="String" />
+    </FunctionImport>
+    <FunctionImport Name="Load_LogPatientID" ReturnType="Collection(String)">
+      <Parameter Name="username" Mode="In" Type="String" />
+    </FunctionImport>
+    <FunctionImport Name="Load_Password" ReturnType="Collection(String)">
+      <Parameter Name="username" Mode="In" Type="String" />
+    </FunctionImport>
+    <FunctionImport Name="Load_PatientID" ReturnType="Collection(String)" />
+    <FunctionImport Name="Load_PharmacyID" ReturnType="Collection(String)" />
+    <FunctionImport Name="Load_PharmacyPassword">
+      <Parameter Name="username" Mode="In" Type="String" />
+    </FunctionImport>
+    <FunctionImport Name="Make_Appointment">
+      <Parameter Name="date" Mode="In" Type="DateTime" />
+      <Parameter Name="doctor" Mode="In" Type="String" />
+      <Parameter Name="hospital" Mode="In" Type="String" />
+      <Parameter Name="time" Mode="In" Type="String" />
+      <Parameter Name="pid" Mode="In" Type="String" />
+    </FunctionImport>
+    <FunctionImport Name="report">
+      <Parameter Name="count" Mode="In" Type="String" />
+    </FunctionImport>
+    <FunctionImport Name="report1">
+      <Parameter Name="did" Mode="In" Type="String" />
+    </FunctionImport>
+    <FunctionImport Name="sp_alterdiagram">
+      <Parameter Name="diagramname" Mode="In" Type="String" />
+      <Parameter Name="owner_id" Mode="In" Type="Int32" />
+      <Parameter Name="version" Mode="In" Type="Int32" />
+      <Parameter Name="definition" Mode="In" Type="Binary" />
+    </FunctionImport>
+    <FunctionImport Name="sp_creatediagram">
+      <Parameter Name="diagramname" Mode="In" Type="String" />
+      <Parameter Name="owner_id" Mode="In" Type="Int32" />
+      <Parameter Name="version" Mode="In" Type="Int32" />
+      <Parameter Name="definition" Mode="In" Type="Binary" />
+    </FunctionImport>
+    <FunctionImport Name="sp_dropdiagram">
+      <Parameter Name="diagramname" Mode="In" Type="String" />
+      <Parameter Name="owner_id" Mode="In" Type="Int32" />
+    </FunctionImport>
+    <FunctionImport Name="sp_helpdiagramdefinition">
+      <Parameter Name="diagramname" Mode="In" Type="String" />
+      <Parameter Name="owner_id" Mode="In" Type="Int32" />
+    </FunctionImport>
+    <FunctionImport Name="sp_helpdiagrams">
+      <Parameter Name="diagramname" Mode="In" Type="String" />
+      <Parameter Name="owner_id" Mode="In" Type="Int32" />
+    </FunctionImport>
+    <FunctionImport Name="sp_renamediagram">
+      <Parameter Name="diagramname" Mode="In" Type="String" />
+      <Parameter Name="owner_id" Mode="In" Type="Int32" />
+      <Parameter Name="new_diagramname" Mode="In" Type="String" />
+    </FunctionImport>
+    <FunctionImport Name="sp_upgraddiagrams" />
+    <FunctionImport Name="Symptomsp1" ReturnType="Collection(String)" />
+    <FunctionImport Name="Update_Table">
+      <Parameter Name="date" Mode="In" Type="DateTime" />
+      <Parameter Name="doctor" Mode="In" Type="String" />
+      <Parameter Name="hospital" Mode="In" Type="String" />
+      <Parameter Name="time" Mode="In" Type="String" />
+    </FunctionImport>
+  </EntityContainer>
+  <ComplexType Name="Get_ID_Result">
+    <Property Type="Int32" Name="ChannelingID" Nullable="false" />
+    <Property Type="String" Name="DoctorName" Nullable="true" MaxLength="50" />
+    <Property Type="String" Name="HospitalName" Nullable="true" MaxLength="50" />
+    <Property Type="String" Name="TimeSlot" Nullable="true" MaxLength="50" />
+    <Property Type="DateTime" Name="Date" Nullable="true" />
+  </ComplexType>
+</Schema>

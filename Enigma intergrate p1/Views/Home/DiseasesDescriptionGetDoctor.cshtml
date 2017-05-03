@@ -1,0 +1,240 @@
+﻿
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html lang="en">
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>e-clinic</title>
+    <link rel="shortcut icon" href="~/images/favicon.ico" type="image/x-icon" /> 
+    <link href="~/Content/bootstrap.min.css" rel="stylesheet" />
+    <script src="~/Scripts/angular.min.js"></script>
+    <script src="~/Scripts/jquery-3.0.0.js"></script>
+    <script src="~/Scripts/bootstrap.js"></script>
+    @*<link href="~/Content/Styles.css" rel="stylesheet" />*@
+    <link href="~/Content/font-awesome-animation.css" rel="stylesheet" />
+    <link href="~/Content/font-awesome.css" rel="stylesheet" />
+    <link href="~/Content/imagehover.css" rel="stylesheet" />
+    <link href="~/Content/animate.css" rel="stylesheet" />
+    <style>
+        .parallax {
+            background-image: url('../../images/doc_scope2.jpg');
+            /*opacity:0.65;*/
+            min-height: 200px;
+            background-attachment: fixed;
+            background-position: center;
+            background-repeat: no-repeat;
+            background-size: cover;
+        }
+
+        .fa {
+            color: cornflowerblue;
+        }
+
+        .myJumbotron {
+            background-color: white;
+            height: auto;
+            padding: 5px;
+        }
+
+        .imgborder {
+            padding: 5px 5px 5px;
+            background-color: white;
+            box-shadow: 0 1px 2px rgba(34,25,25,0.4);
+            -moz-box-shadow: 0 1px 2px rgba(34,25,25,0.4);
+            -webkit-box-shadow: 0 1px 2px rgba(34,25,25,0.4);
+        }
+
+        .forbtn {
+            width: 300px;
+        }
+
+        .pformat {
+        }
+
+        .spantitle {
+            /*font-family:Elephant;*/
+            font-size: 30px;
+        }
+
+        .hrheight {
+            border: 3px solid skyblue;
+        }
+    </style>
+
+    <script>
+        function btnFn1() {
+            document.getElementById('msg').innerHTML = document.getElementById('btn1').value;
+            document.getElementById('title').innerHTML = "Diabetes";
+            document.getElementById('clipp').innerHTML = '<iframe width="854" height="480" src="https://www.youtube.com/embed/X9ivR4y03DE" frameborder="1"></iframe>';
+        }
+        function btnFn2() {
+            document.getElementById('msg').innerHTML = document.getElementById('btn2').value;
+            document.getElementById('title').innerHTML = "Stroke";
+            document.getElementById('clipp').innerHTML = '<iframe width="854" height="480" src="https://www.youtube.com/embed/pcmrgwNCPwM" frameborder="1"></iframe>';
+
+        }
+        function btnFn3() {
+            document.getElementById('msg').innerHTML = document.getElementById('btn3').value;
+            document.getElementById('title').innerHTML = "Chronic Kidney disease";
+            document.getElementById('clipp').innerHTML = '<iframe width="854" height="480" src="https://www.youtube.com/embed/JjcqY95HR1o" frameborder="1"></iframe>';
+        }
+        function btnFn4() {
+            document.getElementById('msg').innerHTML = document.getElementById('btn4').value;
+            document.getElementById('title').innerHTML = "Hypertension";
+            document.getElementById('clipp').innerHTML = '<iframe width="854" height="480" src="https://www.youtube.com/embed/diG519dFVNs" frameborder="1"></iframe>';
+        }
+        function btnFn5() {
+            document.getElementById('msg').innerHTML = document.getElementById('btn5').value;
+            document.getElementById('title').innerHTML = "Cataract";
+            document.getElementById('clipp').innerHTML = '<iframe width="854" height="480" src="https://www.youtube.com/embed/d5D0B2PoC7U" frameborder="1"></iframe> ';
+        }
+        function btnFn6() {
+            document.getElementById('msg').innerHTML = document.getElementById('btn6').value;
+            document.getElementById('title').innerHTML = "Osteoarthritis";
+            document.getElementById('clipp').innerHTML = '<iframe width="854" height="480" src="https://www.youtube.com/embed/41IMR_Dp5bs" frameborder="1"></iframe>';
+        }
+        function btnFn7() {
+            document.getElementById('msg').innerHTML = document.getElementById('btn7').value;
+            document.getElementById('title').innerHTML = "Migraine";
+            document.getElementById('clipp').innerHTML = '<iframe width="854" height="480" src="https://www.youtube.com/embed/yL22X5opGhY" frameborder="1"></iframe>';
+        }
+        function btnFn8() {
+            document.getElementById('msg').innerHTML = document.getElementById('btn8').value;
+            document.getElementById('title').innerHTML = "Rheumatoid-arthritis";
+            document.getElementById('clipp').innerHTML = '<iframe  width="854" height="480" src="https://www.youtube.com/embed/YTLARL39bFA" frameborder="1"></iframe>';
+        }
+
+    </script>
+
+</head>
+<body>
+    <div>
+        <div class="col-md-12 col-xs-12">
+            <div class="jumbotron myJumbotron">
+                <div style="text-align:center ">
+                    <div><p style="text-align:center; color:black; font-family:'Colonna MT'; font-size:80px;">E-clinic</p></div>
+                    <!--<div class="animated pulse infinite"><p style="text-align:center; color:black; font-family:'Colonna MT'; font-size:80px;">E-clinic</p></div>-->
+                    <a href="Home"><img src="~/images/icon175x175.png" height="175" width="175" alt="logo" /></a>
+                    <p style="text-align:center">somthing about the e-clinic.....</p>
+                </div>
+            </div>
+
+            <div class="container" style="text-align:justify">
+                <h2>Non-communicable diseases</h2>
+                <p>Noncommunicable diseases (NCDs), also known as chronic diseases, are not passed from person to person. They are of long duration and generally slow progression.</p>
+                <p>All age groups and all regions are affected by NCDs. NCDs are often associated with older age groups, but evidence shows that 16 million of all deaths attributed to noncommunicable diseases (NCDs) occur before the age of 70. Of these "premature" deaths, 82% occurred in low- and middle-income countries. Children, adults and the elderly are all vulnerable to the risk factors that contribute to noncommunicable diseases, whether from unhealthy diets, physical inactivity, exposure to tobacco smoke or the effects of the harmful use of alcohol.</p>
+                <p>Main diseases we discussing here are as follows, click them for mor info:</p>
+                <div class="row">
+                    <div class="col-md-2">
+                        <button id='btn1' onclick='btnFn1();' value="Diabetes is a serious life-long health condition that occurs when the amount of glucose (sugar) in the blood is too high because the body can’t use it properly. If left untreated, high blood glucose levels can cause serious health complications.There are two main types of diabetes: Type 1 and Type 2. They’re different conditions, caused by different things, but they are both serious and need to be treated and managed properly." data-target="#loginModal2" data-toggle="modal" class="btn btn-info" style="width:300px">Diabetes</button>
+                    </div>
+                </div>
+                <br />
+                <div class="row">
+                    <div class="col-md-2">
+                        <button id='btn2' onclick='btnFn2();' value="A stroke is a brain attack. It can happen to anyone at any time. It occurs when blood flow to an area of brain is cut off. When this happens, brain cells are deprived of oxygen and begin to die. When brain cells die during a stroke, abilities controlled by that area of the brain such as memory and muscle control are lost." data-target="#loginModal2" data-toggle="modal" class="btn btn-info" style="width:300px">Stroke</button>
+                    </div>
+                </div>
+                <br />
+                <div class="row">
+                    <div class="col-md-2">
+                        <button id='btn3' onclick='btnFn3();' value="Chronic kidney disease includes conditions that damage your kidneys and decrease their ability to keep you healthy by doing the jobs listed. If kidney disease gets worse, wastes can build to high levels in your blood and make you feel sick. You may develop complications like high blood pressure, anemia (low blood count), weak bones, poor nutritional health and nerve damage. Also, kidney disease increases your risk of having heart and blood vessel disease. These problems may happen slowly over a long period of time. Chronic kidney disease may be caused by diabetes, high blood pressure and other disorders. Early detection and treatment can often keep chronic kidney disease from getting worse. When kidney disease progresses, it may eventually lead to kidney failure, which requires dialysis or a kidney transplant to maintain life." data-target="#loginModal2" data-toggle="modal" class="btn btn-info" style="width:300px">Chronic Kidney disease</button>
+                    </div>
+                </div>
+                <br />
+                <div class="row">
+                    <div class="col-md-2">
+                        <button id='btn4' onclick='btnFn4();' value="Hypertension, also known as high blood pressure, is when the pressure of the blood being pumped through your arteries is higher than it should be. High blood pressure, or hypertension has been called the silent killer, because it often has no warning signs or symptoms, and many people do not even know they have it. Over time, the constant pressure overload causes accumulating damage that eventually becomes more than your circulatory system can handle, often leading to serious health problems." data-target="#loginModal2" data-toggle="modal" class="btn btn-info" style="width:300px">Hypertension</button>
+                    </div>
+                </div>
+                <br />
+                <div class="row">
+                    <div class="col-md-2">
+                        <button id='btn5' onclick='btnFn5();' value="A cataract is a clouding of the lens in the eye which leads to a decrease in vision. Cataracts often develop slowly and can affect one or both eyes. Symptoms may include faded colors, blurry vision, halos around light, trouble with bright lights, and trouble seeing at night. This may result in trouble driving, reading, or recognizing faces. Poor vision caused by cataracts may also result in an increased risk of falling and depression. Cataracts are the cause of half of blindness and 33% of visual impairment worldwide." data-target="#loginModal2" data-toggle="modal" class="btn btn-info" style="width:300px">Cataract</button>
+                    </div>
+                </div>
+                <br />
+                <div class="row">
+                    <div class="col-md-2">
+                        <button id='btn6' onclick='btnFn6();' value="Osteoarthritis (AH-stee-oh-ar-THREYE-tis) is the most common type of arthritis and is seen especially among older people. Sometimes it is called degenerative joint disease. Osteoarthritis mostly affects cartilage (KAR-til-uj), the hard but slippery tissue that covers the ends of bones where they meet to form a joint. Healthy cartilage allows bones to glide over one another. It also absorbs energy from the shock of physical movement. In osteoarthritis, the surface layer of cartilage breaks and wears away. This allows bones under the cartilage to rub together, causing pain, swelling, and loss of motion of the joint. Over time, the joint may lose its normal shape. Also, small deposits of bone -- called osteophytes or bone spurs -- may grow on the edges of the joint. Bits of bone or cartilage can break off and float inside the joint space. This causes more pain and damage. People with osteoarthritis usually have joint pain and stiffness. Unlike some other forms of arthritis, such as rheumatoid arthritis, osteoarthritis affects only joint function. It does not affect skin tissue, the lungs, the eyes, or the blood vessels." data-target="#loginModal2" data-toggle="modal" class="btn btn-info" style="width:300px">Osteoarthritis</button>
+                    </div>
+                </div>
+                <br />
+                <div class="row">
+                    <div class="col-md-2">
+                        <button id='btn7' onclick='btnFn7();' value="Migraines are intense, sometimes debilitating headaches. The most common types of migraine are those with aura (classical migraines) and those without aura (common migraines). Migraines can begin in childhood or may not occur until early adulthood. According to the Mayo Clinic, women are three times more likely than men to have migraines. Family history is one of the most common risk factors for having migraines." data-target="#loginModal2" data-toggle="modal" class="btn btn-info" style="width:300px">Migraine</button>
+                    </div>
+                </div>
+                <br />
+                <div class="row">
+                    <div class="col-md-2">
+                        <button id='btn8' onclick='btnFn8();' value="Rheumatoid arthritis (RA) is an autoimmune disease in which the body’s immune system – which normally protects its health by attacking foreign substances like bacteria and viruses – mistakenly attacks the joints. This creates inflammation that causes the tissue that lines the inside of joints (the synovium) to thicken, resulting in swelling and pain in and around the joints. The synovium makes a fluid that lubricates joints and helps them move smoothly." data-target="#loginModal2" data-toggle="modal" class="btn btn-info" style="width:300px">Rheumatoid-arthritis</button>
+                    </div>
+                </div>
+            </div>
+
+            @*model starts*@
+            <div class="modal fade" tabindex="-1" id="loginModal2" data-keyboard="false" data-backdrop="static">
+                <div class="modal-dialog modal-lg">
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <button type="button" class="close" data-dismiss="modal">
+                                &times;
+                            </button>
+                            @*<h4 class="modal-title">title</h4>*@
+                            <span id="title" class="spantitle"></span>
+                        </div>
+                        <div class="modal-body">
+                            <span id="msg"></span>
+                            <br />
+                            <br />
+                            <span id="clipp"></span>
+                        </div>
+                        <div class="modal-footer">
+                            <a href="#" class="btn btn-success">Check the Doctor</a>
+                            <button type="button" class="btn btn-primary" data-dismiss="modal" style="text-align:right">Close</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            @*model ends*@
+
+            <hr class="hrheight">
+            <footer class="container">
+                @*<p style="font-size:24px">Quick access</p>*@
+                <button class="btn-warning btn-lg">Quick access</button>
+                <br />
+                <br />
+                <div style="background-color:#ffffff; height:auto; padding:15px; text-align:center; opacity:1;">
+                    <div class="row">
+                        <div class="col-md-1 col-xs-1">
+                            <a href="https://www.facebook.com/" target="_blank" class="btn faa-parent animated-hover fa-lg fa-border"><i class="fa fa-facebook fa-fw faa-shake"></i></a>
+                        </div>
+                        <div class="col-md-1 col-xs-1">
+                            <a href="https://www.instagram.com/" target="_blank" class="btn faa-parent animated-hover fa-lg fa-border"><i class="fa fa-instagram fa-fw faa-shake"></i></a>
+                        </div>
+                        <div class="col-md-1 col-xs-1">
+                            <a href="https://plus.google.com/" target="_blank" class="btn faa-parent animated-hover fa-lg fa-border"><i class="fa fa-google-plus fa-fw faa-shake"></i></a>
+                        </div>
+                        <div class="col-md-1 col-xs-1">
+                            <a href="https://mail.google.com/mail/u/0/#inbox?compose=new/" target="_blank" class="btn faa-parent animated-hover fa-lg fa-border"><i class="fa fa-envelope fa-fw faa-shake"></i></a>
+                        </div>
+                    </div>
+                </div>
+                <br />
+                <a href="Services" class="afontwhite">Services</a>&nbsp;&nbsp;&nbsp;<a href="AboutUs" class="afontwhite">About Us</a>&nbsp;&nbsp;&nbsp;<a href="ContactUs" class="afontwhite">Contact Us</a>&nbsp;&nbsp;&nbsp;
+                <p>&copy;&nbsp;Enigma.All Right Reserved &nbsp; @DateTime.Now &nbsp;All Right Reserved</p>
+                <div class="display-field">
+
+                </div>
+            </footer>
+        </div>
+    </div>
+</body>
+</html>

@@ -1,0 +1,181 @@
+﻿
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html lang="en">
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>e-clinic</title>
+    <link rel="shortcut icon" href="~/images/favicon.ico" type="image/x-icon" />
+    <link href="~/Content/bootstrap.min.css" rel="stylesheet" />
+    <script src="~/Scripts/jquery-3.0.0.js"></script>
+    <script src="~/Scripts/bootstrap.js"></script>
+    @*<link href="~/Content/Styles.css" rel="stylesheet" />*@
+    <link href="~/Content/font-awesome.css" rel="stylesheet" />
+    <link href="~/Content/font-awesome-animation.css" rel="stylesheet" />
+    <link href="~/Content/imagehover.css" rel="stylesheet" />
+    <link href="~/Content/animate.css" rel="stylesheet" />
+    <script type="text/javascript" src="https://www.google.com/jsapi"></script>
+    <script type="text/javascript" src='http://maps.google.com/maps/api/js?key=AIzaSyBTbAta6dVofISRcQZ6OGi_CW_lw4LncSM&libraries=places,geometry&sensor=false'></script>
+    <script src="~/Scripts/PharmacySearch.js"></script>
+    <script>
+        window.smoothScroll = function (target) {
+            var scrollContainer = target;
+            do {
+                scrollContainer = scrollContainer.parentNode;
+                if (!scrollContainer) return;
+                scrollContainer.scrollTop += 1;
+            } while (scrollContainer.scrollTop == 0);
+
+            var targetY = 0;
+            do {
+                if (target == scrollContainer) break;
+                targetY += target.offsetTop;
+            } while (target = target.offsetParent);
+
+            scroll = function (c, a, b, i) {
+                i++; if (i > 30) return;
+                c.scrollTop = a + (b - a) / 30 * i;
+                setTimeout(function () { scroll(c, a, b, i); }, 20);
+            }
+            scroll(scrollContainer, scrollContainer.scrollTop, targetY, 0);
+        }
+    </script>
+    <style>
+        .parallax {
+            background-image: url('../../images/doc_scope2.jpg');
+            /*opacity:0.65;*/
+            min-height: 200px;
+            background-attachment: fixed;
+            background-position: center;
+            background-repeat: no-repeat;
+            background-size: cover;
+        }
+
+        .fa {
+            color: cornflowerblue;
+        }
+
+        .myJumbotron {
+            background-color: white;
+            height: 350px;
+            padding: 5px;
+            background-image: url('../../images/dd.jpg');
+        }
+
+        .imgborder {
+            padding: 5px 5px 5px;
+            background-color: white;
+            box-shadow: 0 1px 2px rgba(34,25,25,0.4);
+            -moz-box-shadow: 0 1px 2px rgba(34,25,25,0.4);
+            -webkit-box-shadow: 0 1px 2px rgba(34,25,25,0.4);
+        }
+
+        .hrheight {
+            border: 3px solid skyblue;
+        }
+
+        .boxwidth{
+            width:150px;
+        }
+    </style>
+</head>
+<body onload="myFunction()">
+
+        <div class="col-md-12 col-xs-12">
+            <div class="jumbotron myJumbotron">
+                <div style="text-align:center ">
+                    <div><p style="text-align:center; color:black; font-family:'Colonna MT'; font-size:80px;">E-clinic</p></div>
+                    <!--<div class="animated pulse infinite"><p style="text-align:center; color:black; font-family:'Colonna MT'; font-size:80px;">E-clinic</p></div>-->
+                    <a href="Home"><img src="~/images/icon175x175.png" height="175" width="175" alt="logo" /></a>
+                    <p style="text-align:center">somthing about the e-clinic.....</p>
+                </div>
+
+            </div>
+            <div class="container">
+                <div><h2><i class="fa fa-map-marker faa-tada animated" style="color:red"></i>&nbsp;&nbsp;Search nearby pharmacies now</h2>                    
+                    <p style="font-style:italic; font-size:14px;">
+                        **simply enter the location you want. Then select the radius and check all pharmacies near you.
+                    </p>
+                </div>
+                <br /><br />
+                <div class="row">
+                    <div class="col-md-2">
+                        <label>Search pharmacy now:</label>
+                    </div>
+                    <div class="col-md-4">
+                        <input type="text" id="address" placeholder="Input location" class="boxwidth btn-outline-info"/>
+                    </div>
+                </div>
+                <br />
+                <div class="row">
+                    <div class="col-md-2">
+                        <label>Select the radius:</label>
+                    </div>
+                    <div class="col-md-4">
+                        <select id="radius_km" class="boxwidth btn-outline-info">
+                            <option selected hidden>select here</option>
+                            <option value=1>1km</option>
+                            <option value=2>2km</option>
+                            <option value=5>5km</option>
+                            <option value=30>30km</option>
+                        </select>
+                    </div>
+                </div>
+                <br /><br />
+                <div class="row">
+                    <div class="col-md-2"></div>
+                    <div class="col-md-2">
+                        <button class="btn btn-danger" onclick="showCloseLocations(); smoothScroll(document.getElementById('second'))">Check now</button>
+                    </div>
+                </div>
+                <br /><br />
+                <div class="row" style="border:double" id="second">
+                    <div id="map_canvas" style="height:500px;"></div>
+                </div>
+            </div>
+            <hr class="hrheight" />
+            <footer>
+                <button class="btn-warning btn-lg">Quick access</button>
+                <br />
+                <div style="background-color:teal; height:auto; padding:15px; text-align:center; opacity:1;">
+                    <div class="row">
+                        <div class="col-md-1 col-xs-1">
+                            <a href="PharmacySearch" target="_blank" class="btn faa-parent animated-hover fa-lg fa-border" title="search nearby pharmacies"><i class="fa fa-map-marker fa-fw faa-tada animated" style="color:orange"></i></a>
+                        </div>
+                        <div class="col-md-1 col-xs-1">
+                            <a href="ReportPage" target="_blank" class="btn faa-parent animated-hover fa-lg fa-border" title="view reports"><i class="fa fa-book fa-fw faa-tada animated" style="color:orange"></i></a>
+                        </div>
+                    </div>
+                </div>
+                <br />
+                <div style="background-color:#ffffff; height:auto; padding:15px; text-align:center; opacity:1;">
+                    <div class="row">
+                        <div class="col-md-1 col-xs-1">
+                            <a href="https://www.facebook.com/" target="_blank" class="btn faa-parent animated-hover fa-lg fa-border"><i class="fa fa-facebook fa-fw faa-shake"></i></a>
+                        </div>
+                        <div class="col-md-1 col-xs-1">
+                            <a href="https://www.instagram.com/" target="_blank" class="btn faa-parent animated-hover fa-lg fa-border"><i class="fa fa-instagram fa-fw faa-shake"></i></a>
+                        </div>
+                        <div class="col-md-1 col-xs-1">
+                            <a href="https://plus.google.com/" target="_blank" class="btn faa-parent animated-hover fa-lg fa-border"><i class="fa fa-google-plus fa-fw faa-shake"></i></a>
+                        </div>
+                        <div class="col-md-1 col-xs-1">
+                            <a href="https://mail.google.com/mail/u/0/#inbox?compose=new/" target="_blank" class="btn faa-parent animated-hover fa-lg fa-border"><i class="fa fa-envelope fa-fw faa-shake"></i></a>
+                        </div>
+                    </div>
+                </div>
+                <br />
+                <a href="Services" class="afontwhite">Services</a>&nbsp;&nbsp;&nbsp;<a href="AboutUs" class="afontwhite">About Us</a>&nbsp;&nbsp;&nbsp;<a href="ContactUs" class="afontwhite">Contact Us</a>&nbsp;&nbsp;&nbsp;<a href="Developer" class="afontwhite">Developer</a>&nbsp;&nbsp;&nbsp;<a href="AdminLogin" class="afontwhite">Admin</a>
+                <p>&copy;&nbsp;Enigma.All Right Reserved &nbsp; @DateTime.Now &nbsp;All Right Reserved</p>
+                <div class="display-field">
+                </div>
+            </footer>
+        </div>
+</body>
+</html>
